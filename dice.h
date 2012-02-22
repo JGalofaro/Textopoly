@@ -6,26 +6,50 @@
  * Dice.h will be the control file for Textopoly's game die.
  **/
 #include <iostream>
+#include <math.h>
+#include <time.h>
 using namespace std;
 
 class dice
 {
 public:
+	dice(int sides);
 	dice();
 	~dice();
-	int roll(int sides);
+	int roll();
+private:
+	int s; //# of sides the die has
 };
 
-dice::dice()
+/**
+ * Create a die with specified sides, anything less than 2 sides 
+ * will default to a normal 6 sided die
+ **/
+dice::dice( int sides )
 {
-	cerr << "Die created." << endl;
+	if( sides >= 2 )
+	{
+		srand( time(NULL) );
+		s = sides;
+		
+	} else { dice(); }
 }
 
-int dice::roll(int sides)
+/**
+ * Unspecified die creation will result in a normal 6 sided die
+ **/
+dice::dice()
 {
-	cerr << "The die has " << sides << " sides." << endl;
+	s = 6;
+	cerr << "Default 6 sided Die created." << endl;
+}
 
-	return 0;
+/**
+ * Will "roll the die" with the specified sides avalible and return result
+ **/
+int dice::roll()
+{
+	return rand() % s + 1;
 }
 
 dice::~dice(){};
