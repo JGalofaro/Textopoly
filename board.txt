@@ -1,0 +1,48 @@
+#deed name
+#baord position
+#price
+#rent
+#group number
+###Need to find cost of buildings and mortgage
+
+Mediterranean Ave.
+2
+60
+2
+1
+
+Baltic Ave.
+4
+60
+4
+1
+
+Oriental Ave.
+7
+100
+6
+2
+
+Vermont Ave.
+9
+100
+6
+2
+
+Connecticut Ave.
+10
+120
+8
+2
+
+St. Charles Place
+12
+140
+10
+3
+
+States Ave.
+14
+140
+10
+3
