@@ -16,12 +16,26 @@ const int hotelMax = 12;	//Total number of hotels
 const int chanceMax = 16;	//Total number of chance cards
 const int communityMax = 16; 	//Total number of community chests
 const int starterMoney = 1500;	//Starting cash for every player
+const int boardSize = 40;	//Size of the game board
+const int streetMax = 22;	//Total number of streets
+const int railMax = 4;		//Total number of railroads
+const int utilMax = 2;		//Total number of utilities
 
 struct player
 {
 	int bank;	//How much money the player has
 	int owns[40];	//What properties the player owns
 	int gPiece;	//The game piece the player is using
+};
+
+struct deed
+{
+	int price;	//Purchase price for the property
+	int mortgage;	//Mortgage price
+	int rent;	//Cost of rent
+	bool buildable;	//Owner has the ability to build on property
+	int houseCost;	//Cost to build a house on the property
+	int hotelCost;	//Cot to build a hotel on the property
 };
 
 int main( int argc, char *argv[] )
@@ -62,7 +76,7 @@ int main( int argc, char *argv[] )
 	
 		while( pFlag == true )
 		{
-			//Cycle threw already created players, if one
+			//Cycle thru already created players, if one
 			//has the same game piece keep the flag on and
 			//loop back to the while, else flip the flag and
 			//assign that player their selected piece
